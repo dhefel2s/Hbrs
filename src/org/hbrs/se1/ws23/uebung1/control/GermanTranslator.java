@@ -22,7 +22,7 @@ public class GermanTranslator implements Translator {
 		zahl.put(8, "acht");
 		zahl.put(9, "neun");
 		zahl.put(10, "zehn");
-		return zahl.getOrDefault(number,"Übersetzung der Zahl " + number + " nicht möglich 1.0");
+		return zahl.getOrDefault(number,"Übersetzung der Zahl " + number + " nicht möglich " + Translator.version);
 	}
 
 	/**
