@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2023-11-05T19:07:51.829Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" etag="8XryQAxwVtPWoolZzKy-" version="22.0.8" type="github">
+  <diagram name="Seite-1" id="4uEQWGBOSVK4lKFrfHZp">
+    <mxGraphModel dx="838" dy="564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="-mwzHlTSXCIwCckR4kkh-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="60" />
+              <mxPoint x="200" y="60" />
+            </Array>
+            <mxPoint x="150" y="60" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-1" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;fillColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="120" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-mwzHlTSXCIwCckR4kkh-2" target="-mwzHlTSXCIwCckR4kkh-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-2" value="Fachfeinkonzept erstellen" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="200" y="20" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-mwzHlTSXCIwCckR4kkh-4" target="-mwzHlTSXCIwCckR4kkh-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-4" value="Dokumente aufarbeiten" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="370" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="-mwzHlTSXCIwCckR4kkh-2" target="-mwzHlTSXCIwCckR4kkh-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-mwzHlTSXCIwCckR4kkh-8" target="-mwzHlTSXCIwCckR4kkh-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-8" value="Dokumente ablegen" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="570" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-mwzHlTSXCIwCckR4kkh-10" target="-mwzHlTSXCIwCckR4kkh-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-10" value="SharePoint" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="760" y="10" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-mwzHlTSXCIwCckR4kkh-13" target="-mwzHlTSXCIwCckR4kkh-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-13" value="Stakeholder benachrichtigen" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="570" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-mwzHlTSXCIwCckR4kkh-15" value="Review durchführen" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="340" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
