@@ -21,7 +21,7 @@ public class ContainerTest {
     void innit() {
         uno = new ConcreteMember(1);
         zwo = new ConcreteMember(2);
-        zahl = new Container();
+        zahl = Container.getInstance();
     }
 
     @Test
@@ -51,14 +51,14 @@ public class ContainerTest {
 
     @Test
     public void keineStrategy() {
-        Container container = new Container();
+        Container container = Container.getInstance();
 
         assertNull(container.getPersistenceStrategy());
     }
 
     @Test
     public void testMongoDBStrategy() {
-        Container container = new Container();
+        Container container = Container.getInstance();
 
         PersistenceStrategy<Member> strategy = new PersistenceStrategyMongoDB();
         container.setPersistenceStrategy(strategy);
@@ -69,7 +69,7 @@ public class ContainerTest {
 
     @Test
     public void testInvalidLocation() {
-        Container container = new Container();
+        Container container = Container.getInstance();
 
 
         PersistenceStrategyStream<Member> strategy = new PersistenceStrategyStream<>();
@@ -81,7 +81,7 @@ public class ContainerTest {
 
     @Test
     public void testRoundTrip() {
-        Container container = new Container();
+        Container container = Container.getInstance();
         PersistenceStrategyStream<Member> strategy = new PersistenceStrategyStream<>();
         container.setPersistenceStrategy(strategy);
 

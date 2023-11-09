@@ -10,27 +10,27 @@ import java.util.NoSuchElementException;
 public class Container {
 
     public static void main(String[] args) throws ContainerException {
-        Container container = new Container();
+        Container container = getInstance();
+        Container container1 = getInstance();
         Member n = new ConcreteMember(2);
         Member f = new ConcreteMember(4);
         container.addMember(n);
         container.addMember(f);
         container.addMember(new ConcreteMember(5));
-        container.dump();
         System.out.println(container.size());
 
     }
-    private static Container instance = null;
-    ArrayList<Member> container;
     private PersistenceStrategy<Member> persistenceStrategy;
+    private ArrayList<Member> Liste;
+    private static Container instance = null;
 
-
-    public Container() {
-        container = new ArrayList<Member>();
+    private Container() {
+        Liste = new ArrayList<Member>();
     }
-    public static Container getInstance() {
-        if (instance == null) {
-            instance = new Container();
+    // Thread safe??
+    public static synchronized Container getInstance() {
+        if(instance == null){
+            return new Container(); // synchronized, thread safe, höhere laufzeit, static klassenmethode, zuvor keine instanzobjekt, objektvariable kann nicht in static methode
         }
         return instance;
     }
@@ -44,29 +44,29 @@ public class Container {
 
     public void store() throws PersistenceException {
         persistenceStrategy.openConnection();
-        persistenceStrategy.save(container);
+        persistenceStrategy.save(Liste);
         persistenceStrategy.closeConnection();
     }
     public void load() throws PersistenceException {
         persistenceStrategy.openConnection();
-        container = (ArrayList<Member>) persistenceStrategy.load();
+        Liste = (ArrayList<Member>) persistenceStrategy.load();
         persistenceStrategy.closeConnection();
     }
     public void addMember(Member member) throws ContainerException {
-        for (Member members : container) {
+        for (Member members : Liste) {
             int i = members.getID();
             if (i == member.getID()) {
                 throw new ContainerException(member.getID());
             }
         }
-        container.add(member);
+        Liste.add(member);
     }
 
     public String deleteMember(Integer id) {
-        for (Member members : container) {
+        for (Member members : Liste) {
             int i = members.getID();
             if (i == id) {
-                container.remove(members);
+                Liste.remove(members);
                 return "erfolgreiches entfernen";
             }
         }
@@ -74,15 +74,10 @@ public class Container {
     }
 
     public ArrayList<Member> getCurrentList() {
-        return container;
-    }
-    public void dump(){
-        for(Member members: container){
-            System.out.println(members.toString());
-        }
+        return Liste;
     }
     public int size(){
-        return container.size();
+        return Liste.size();
         }
     }
 

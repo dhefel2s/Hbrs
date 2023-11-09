@@ -8,7 +8,7 @@ public class Client {
         public static void main(String[] args) {
 
             try {
-                Container container = new Container();
+                Container container = Container.getInstance();
                 Memberview memberView = new Memberview();
 
                 // Member-Objekte erstellen und zum Container hinzufügen
