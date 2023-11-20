@@ -21,7 +21,7 @@ public class Client {
         try {
             container.store();
         } catch (PersistenceException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
 
         // Aktuelle Liste beziehen aus dem Container

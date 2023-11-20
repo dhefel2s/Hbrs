@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Client {
     // cr1: Singleton pattern und strategy pattern
     // main = assembler
-        public static void main(String[] args) {
+        public static void start() {
 
             try {
                 Container container = Container.getInstance();

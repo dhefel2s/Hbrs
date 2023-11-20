@@ -5,9 +5,10 @@ import org.hbrs.se1.ws23.uebung3.persistence.PersistenceStrategy;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
-public class Container {
+public class Container{
 
     public static void main(String[] args) throws ContainerException {
         Container container = getInstance();
@@ -19,10 +20,12 @@ public class Container {
         container.addMember(new ConcreteMember(5));
         System.out.println(container.size());
 
+
     }
     private PersistenceStrategy<Member> persistenceStrategy;
     private ArrayList<Member> Liste;
     private static Container instance = null;
+    private boolean connectionOpen = false;
 
     private Container() {
         Liste = new ArrayList<Member>();
@@ -35,22 +38,41 @@ public class Container {
         return instance;
     }
 
-    public void setPersistenceStrategy(PersistenceStrategy<Member> strategy) {
-        this.persistenceStrategy = strategy;
+    public void setPersistenceStrategy(PersistenceStrategy persistenceStrategy) {
+        if (connectionOpen == true) {
+            try {
+                this.closeConnection();
+            } catch (PersistenceException e) {
+                e.printStackTrace();
+            }
+        }
+        this.persistenceStrategy = persistenceStrategy;
     }
     public PersistenceStrategy<Member> getPersistenceStrategy() {
         return persistenceStrategy;
     }
 
     public void store() throws PersistenceException {
-        persistenceStrategy.openConnection();
-        persistenceStrategy.save(Liste);
-        persistenceStrategy.closeConnection();
+        if (this.persistenceStrategy == null){
+            throw new PersistenceException("Strategy not initialized");
+        }
+        if(connectionOpen == false) {
+            this.openConnection();
+            connectionOpen = true;
+        }
+        this.persistenceStrategy.save(Liste);
     }
+
     public void load() throws PersistenceException {
-        persistenceStrategy.openConnection();
-        Liste = (ArrayList<Member>) persistenceStrategy.load();
-        persistenceStrategy.closeConnection();
+        if (this.persistenceStrategy == null)
+            throw new PersistenceException("Strategy not initialized");
+
+        if (connectionOpen == false) {
+            this.openConnection();
+            connectionOpen = true;
+        }
+        List<Member> liste = this.persistenceStrategy.load();
+        this.Liste = (ArrayList<Member>) liste;
     }
     public void addMember(Member member) throws ContainerException {
         for (Member members : Liste) {
@@ -79,5 +101,23 @@ public class Container {
     public int size(){
         return Liste.size();
         }
+
+    private void openConnection() throws PersistenceException {
+        try {
+            this.persistenceStrategy.openConnection();
+            connectionOpen = true;
+        } catch( UnsupportedOperationException e ) {
+            throw new PersistenceException("Not implemented!");
+        }
+    }
+
+    private void closeConnection() throws PersistenceException {
+        try {
+            this.persistenceStrategy.closeConnection();
+            connectionOpen = false;
+        } catch( UnsupportedOperationException e ) {
+            throw new PersistenceException("Not implemented!" );
+        }
+    }
     }
 

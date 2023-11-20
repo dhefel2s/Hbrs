@@ -155,7 +155,7 @@ public class Container {
 			connectionOpen = true;
 		}
 		List<Member> liste = this.strategy.load();
-		this.liste = liste; // MayBe merge
+		this.liste =  liste;
 	}
 
 	/**

@@ -37,7 +37,7 @@ class ContainerTest {
     @Test
     void testMongoDBNotImplementedOldFashioned() {
         try {
-            container.setPersistenceStrategie( new PersistenceStrategyMongoDB<Member>() );
+            container.setPersistenceStrategie(new PersistenceStrategyMongoDB<Member>());
             container.store();
         } catch (PersistenceException e) {
             assertEquals( e.getMessage() , "Not implemented!" );
@@ -47,7 +47,7 @@ class ContainerTest {
 
     @Test
     void testMongoDBNotImplementedHipSolution() {
-        container.setPersistenceStrategie( new PersistenceStrategyMongoDB<Member>() );
+        container.setPersistenceStrategie(new PersistenceStrategyMongoDB<Member>());
         PersistenceException e = assertThrows( PersistenceException.class , () -> container.store() );
         assertEquals( e.getMessage() , "Not implemented!"  );
         assertEquals(  e.getExceptionTypeType() , PersistenceException.

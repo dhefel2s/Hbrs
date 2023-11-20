@@ -2,7 +2,7 @@ package org.hbrs.se1.ws23.uebung2;
 
 
 
-public class ConcreteMember implements Member {
+public class ConcreteMember implements Member,java.io.Serializable {
 
     private int id;
 

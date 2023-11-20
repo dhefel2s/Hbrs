@@ -6,7 +6,7 @@ import org.hbrs.se1.ws23.uebung3.persistence.PersistenceException;
 public class PersistenceStrategyStream<E> implements PersistenceStrategy<E> {
 
     // URL of file, in which the objects are stored
-    private String location = "objects.ser";
+    private String location = "DOKUMENTE/doku.ser";
     private ObjectOutputStream oos;
     private ObjectInputStream ois;
     // Backdoor method used only for testing purposes, if the location should be changed in a Unit-Test
